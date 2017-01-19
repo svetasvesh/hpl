@@ -4,7 +4,7 @@
 
 #PBS -l nodes=1:ppn=64
 
-. /home/opt/intel/bin/compilervars.sh intel64
+. /opt/intel/bin/compilervars.sh intel64
 . /opt/intel/impi/2017.1.132/bin64/mpivars.sh intel64
 
 cd $PBS_O_WORKDIR
