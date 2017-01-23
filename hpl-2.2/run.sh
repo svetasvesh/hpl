@@ -10,4 +10,4 @@
 cd $PBS_O_WORKDIR
 
 export KMP_AFFINITY=verbose,compact
-time mpirun -machinefile $PBS_NODEFILE bin/Unix/xhpl
+time numactl --membind 1 mpirun -machinefile $PBS_NODEFILE bin/Unix/xhpl

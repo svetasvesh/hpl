@@ -32,6 +32,8 @@ sed -e 's%@SHELL@%/bin/sh%' \
     -e 's%@LALIB@%%' \
     setup/Make.UNKNOWN.in > Make.Unix
 
+rm -f ~/hpl
+
 ln -sfn `pwd` ~/hpl
 
 make arch=Unix clean
