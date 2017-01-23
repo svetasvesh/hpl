@@ -15,11 +15,11 @@ sed -e 's%@SHELL@%/bin/sh%' \
     -e 's%@RM@%/bin/rm -f%' \
     -e 's%@TOUCH@%touch%' \
     -e 's%@ARCH@%Unix%' \
-    -e 's%@CC@%mpicc%' \
+    -e 's%@CC@%mpiicc%' \
     -e 's%@CCNOOPT@%%' \
     -e 's%@CCFLAGS@%-I$(MKLROOT)/include%' \
-    -e 's%@LINKER@%mpif77%' \
-    -e 's%@LINKFLAGS@%-L$(MKLROOT)/lib/intel64 -lmkl_intel_lp64 -lmkl_core -lmkl_sequential -lpthread -lm%' \
+    -e 's%@LINKER@%mpiifort%' \
+    -e 's%@LINKFLAGS@%-L$(MKLROOT)/lib/intel64 -lmkl_intel_lp64 -lmkl_core -lmkl_sequential -lpthread -lm -nofor_main%' \
     -e 's%@ARCHIVER@%ar%' \
     -e 's%@ARFLAGS@%r%' \
     -e 's%@RANLIB@%echo%' \
@@ -34,7 +34,7 @@ sed -e 's%@SHELL@%/bin/sh%' \
 
 ln -sfn `pwd` ~/hpl
 
-#make -j9 arch=Unix clean
+make arch=Unix clean
 
 # Компилируем LINPACK.
 make -j9 arch=Unix
